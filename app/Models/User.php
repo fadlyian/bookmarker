@@ -47,7 +47,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(
             related:Bookmark::class,
-            foreignKey:'user_id'
+            foreignKey:'user_id',
         );
     }
 }
