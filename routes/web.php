@@ -46,5 +46,8 @@ Route::get(
     App\Http\Controllers\Bookmarks\RedirectController::class,
 )->middleware(['auth'])->name('bookmarks.redirect');
 
+Route::get('/halamanJono', function () {
+    return view('halamanJono');
+});
 
 require __DIR__.'/auth.php';
