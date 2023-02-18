@@ -55,4 +55,10 @@ Route::get('/halamanJono', function () {
     return view('halamanJono');
 });
 
+
+// tambahan dari fadly Sofyansyah
+
+Route::get('/halamanUtama', function () {
+    return view('halamanUtama');
+});
 require __DIR__.'/auth.php';
