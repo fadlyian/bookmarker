@@ -47,4 +47,10 @@ Route::get(
 )->middleware(['auth'])->name('bookmarks.redirect');
 
 
+
+// tambahan dari fadly Sofyansyah
+
+Route::get('/halamanUtama', function () {
+    return view('halamanUtama');
+});
 require __DIR__.'/auth.php';
