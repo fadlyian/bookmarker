@@ -48,16 +48,6 @@ Route::get(
 
 // tambahan dari fadly Sofyansyah
 
-Route::get('/halamanBiasa', function () {
-    return view('halamanBiasa');
-});
-Route::get('/halamanJono', function () {
-    return view('halamanJono');
-});
-
-
-// tambahan dari fadly Sofyansyah
-
 Route::get('/halamanUtama', function () {
     return view('halamanUtama');
 });
