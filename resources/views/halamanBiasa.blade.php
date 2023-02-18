@@ -14,5 +14,6 @@
 <body>
     <h1>Halaman Biasa dari master</h1>
     <h1>text tambahan dari master</h1>
+    <h1>loh kok gabisa merge ke master ya?</h1>
 </body>
 </html>
