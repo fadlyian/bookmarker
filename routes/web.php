@@ -4,6 +4,10 @@ declare(strict_types=1);
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Services\Transistor;
+use Psr\Container\ContainerInterface;
+ 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +49,7 @@ Route::get(
     'bookmarks/{bookmark}',
     App\Http\Controllers\Bookmarks\RedirectController::class,
 )->middleware(['auth'])->name('bookmarks.redirect');
+
 
 // tambahan dari fadly Sofyansyah
 
