@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Services\Transistor;
-use Psr\Container\ContainerInterface;
  
 
 /*
@@ -18,6 +18,39 @@ use Psr\Container\ContainerInterface;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::redirect('/here', '/there', 301);
+
+Route::view('/welcome', 'login');
+
+// Route::get('/user/{name?}', function($name = "kosong"){
+//     return 'user '. $name;
+// });
+
+//route with parameter
+Route::get('jono/{id}', function(Request $request, $id){
+   return 'Useeerrr ' . $id ; 
+});
+
+// route Controller
+Route::controller(BukuController::class)->group(function (){
+    Route::get('/buku', 'index');
+});
+
+//route prefix
+Route::prefix('tlogosari')->group(function(){
+    Route::get('/',function(){
+        return view('comingSoon');
+    });
+    Route::get('/blog',function(){
+        return view('blog');
+    });
+});
+
+// route named
+Route::get('/user/profile', function () {
+    // ...
+    return "profile";
+})->name('profile');
 
 Route::get('/', function () {
     return view('welcome');
@@ -56,4 +89,13 @@ Route::get(
 Route::get('/halamanUtama', function () {
     return view('halamanUtama');
 });
+
+Route::get('/halamanUtama', function () {
+    return view('halamanUtama');
+})->middleware(['auth']);
+
+// Route::get('/user', [UserController::class, 'index']);
+
+
+
 require __DIR__.'/auth.php';
